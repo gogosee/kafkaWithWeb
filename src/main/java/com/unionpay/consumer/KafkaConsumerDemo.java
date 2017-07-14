@@ -10,7 +10,7 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 public class KafkaConsumerDemo {
 
 	private Properties props;
-	
+
 	public KafkaConsumerDemo(Properties props) {
 		super();
 		this.props = props;
@@ -24,20 +24,20 @@ public class KafkaConsumerDemo {
 		this.props = props;
 	}
 
-	public String receive(){
-		
-		KafkaConsumer<String,String> consumer = new KafkaConsumer<String,String>(props);
+	public String receive() {
+
+		KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props);
 		consumer.subscribe(Arrays.asList(props.getProperty("topic")));
-		
+
 		String msg = "";
-		while(true){
-			ConsumerRecords<String,String> consumerRecords = consumer.poll(100);
-			for(ConsumerRecord<String, String> consumerRecord:consumerRecords){
+		while (true) {
+			ConsumerRecords<String, String> consumerRecords = consumer.poll(100);
+			for (ConsumerRecord<String, String> consumerRecord : consumerRecords) {
 				msg += consumerRecord.value();
 			}
 			consumer.close();
 			return msg;
 		}
 	}
-	
+
 }

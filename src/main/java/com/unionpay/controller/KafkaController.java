@@ -57,9 +57,9 @@ public class KafkaController {
 	@RequestMapping(value = "/receive")
 	public ModelAndView receive() {
 		System.out.println("--------receive--------");
-		
+
 		String msg = consumer.receive();
-		
+
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("msg", msg);
 		mv.setViewName("kafka_receive");
