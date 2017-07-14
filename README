@@ -1,0 +1,15 @@
+本demo实现如何使用
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-clients</artifactId>
+			<version>0.10.2.0</version>
+		</dependency>
+实现kafka的producer和customer。
+可以通过web页面发送消息到kafka，以及读取kafka中消息到页面。
+
+本demo未使用
+		<dependency>
+		    <groupId>org.springframework.kafka</groupId>
+		    <artifactId>spring-kafka</artifactId>
+		</dependency>
+操作kafka
